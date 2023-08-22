@@ -1,0 +1,18 @@
+$mediaQuery1: 1230px;
+$mediaQuery2: 780px;
+
+
+:root{
+    --mainColor: #5597E6;
+    --background: #ECF1F7;
+    --baseShadow: 0px 0px 4px 2px #00000007;
+}
+
+@mixin baseText($size: 16px){
+    font-family: "Montserrat";
+    font-size: $size;
+    color: #191D1F;
+    line-height: 1.5em;
+}
+
+
