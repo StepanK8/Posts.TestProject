@@ -15,7 +15,6 @@ export default {
     },
     methods: {
         search(){
-            console.log('search');
             this.$emit('search', this.inputValue.trim())
         },
     },

@@ -4,7 +4,7 @@
             <SearchApp @search="filterByAuthor"/>
         </div>
         <ul v-if="filteredPosts" class="main__posts">
-            <li v-for="(post, idx) in filteredPosts" :key="idx" class="main__post">
+            <li v-for="(post, idx) in filteredPosts" :key="post.id" class="main__post">
                 <h2 class="main__post_title">{{post.title}}</h2>
                 <p class="main__post_text"> {{post.body}}</p>
                 <div class="main__post_author">{{ post.userName }}</div>
@@ -13,7 +13,7 @@
     </div>
 </template>
 <script>
-import { getPosts } from '@/api/getPosts'
+import { getPostsWithAuthors } from '@/api/getPostsWithAuthors'
 import { getUsers } from '@/api/getUsers'
 import SearchApp from '@/components/SearchApp.vue'
 export default {
@@ -31,7 +31,7 @@ export default {
     created() {
         
 
-        getPosts()
+        getPostsWithAuthors()
         .then(r => {
             this.posts = r
             this.filteredPosts = this.posts
